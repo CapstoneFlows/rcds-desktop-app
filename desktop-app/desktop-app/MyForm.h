@@ -35,6 +35,7 @@ namespace desktopapp {
 			}
 		}
 	private: System::Windows::Forms::FlowLayoutPanel^  flowLayoutPanel1;
+
 	protected:
 
 	private:
@@ -75,6 +76,8 @@ namespace desktopapp {
 		}
 #pragma endregion
 	private: System::Void flowLayoutPanel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	}
+	private: System::Void menuStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 	}
 	};
 }
