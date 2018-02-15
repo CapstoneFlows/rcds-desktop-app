@@ -1,1 +1,9 @@
+Windows Forms Lesson 5 How to use the FlowLayout Panel:
 https://www.youtube.com/watch?v=NxfYFAw0JDs
+
+
+Visual C++ Tutorial 29 -Windows Forms Application: How to use Chart /Graph in Visual C++
+https://www.youtube.com/watch?v=rx14eHnML1Q
+
+Serial Communication between visual c++( or visual studio) and arduino
+https://www.youtube.com/watch?v=UiDXnww0LQ4
