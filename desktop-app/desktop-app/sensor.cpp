@@ -6,17 +6,21 @@ sensor::sensor()
 {
 }
 
-sensor::filter_height(double min, double max)
+
+
+void sensor::filter_height(double min, double max)
 {
-	for (int i = 0; i < this.data.length();i++)
+	/*
+	for (int i = 0; i < this->data.size();i++)
 	{
-		record filtered[this.data.length()];
+		record filtered[this->data.size()];
 		int j = 0;
-		if (this.data[i].height > min) & (this.data[i].height < max)
+		if ((this->data[i].height > min) && (this->data[i].height < max))
 		{
-			filtered[j] = this.data[i];
+			filtered[j] = this->data[i];
 			j++;
 		}
 	}
-	this.data = filtered;
+	this->data = filtered;
+	*/
 }

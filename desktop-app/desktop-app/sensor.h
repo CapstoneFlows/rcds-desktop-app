@@ -14,6 +14,6 @@ public:
 	string location; //Address of where the sensor is placed
 	record data[];
 	sensor(); //Initialize with Data from SQL Database
-	filter_height(low, max); // Filter the Data with given low & max height; 
+	void filter_height(double low, double max); // Filter the Data with given low & max height; 
 };
 
