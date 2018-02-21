@@ -7,3 +7,6 @@ https://www.youtube.com/watch?v=rx14eHnML1Q
 
 Serial Communication between visual c++( or visual studio) and arduino
 https://www.youtube.com/watch?v=UiDXnww0LQ4
+
+How to do basic file I/O in Visual C++ or in Visual C++ .NET(Webpage)
+https://support.microsoft.com/en-us/help/307398/how-to-do-basic-file-i-o-in-visual-c-or-in-visual-c-net

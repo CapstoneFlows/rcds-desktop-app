@@ -15,5 +15,6 @@ public:
 	string vehicle_type; // Determined by calculating the height and speed
 
 	record(); // Initialize with Data from SQL database
+	record(int id, string location,  double height);
 };
 

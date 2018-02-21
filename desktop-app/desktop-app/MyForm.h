@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <string>
 
 namespace desktopapp {
 
@@ -15,12 +17,22 @@ namespace desktopapp {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
+		//sensor *sensor1;
 		MyForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			/*
+			record record1 = record(1, "NEU", 7.0);
+			record record2 = record(2, "NEU", 7.0);
+			record record3 = record(3, "NEU", 7.0);
+			record record4 = record(4, "NEU", 7.0);
+			record *records = &record1;
+			*(records + 1) = record2;
+			*(records + 1) = record3;
+			*(records + 1) = record4;
+			sensor sensor_addr = sensor(1, "NEU", records, 4);
+			*sensor1 = sensor_addr;
+			*/
 		}
 
 	protected:
@@ -52,11 +64,6 @@ namespace desktopapp {
 	private: System::Windows::Forms::Label^  label1;
 
 
-
-
-
-
-
 	protected:
 
 	
@@ -78,11 +85,11 @@ namespace desktopapp {
 			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Title^  title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->import_button = (gcnew System::Windows::Forms::Button());
 			this->speed_chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->dataSet1 = (gcnew System::Data::DataSet());
 			this->dataTable1 = (gcnew System::Data::DataTable());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->total_count_label = (gcnew System::Windows::Forms::Label());
 			this->total_count_value = (gcnew System::Windows::Forms::Label());
@@ -108,6 +115,16 @@ namespace desktopapp {
 			this->flowLayoutPanel1->Size = System::Drawing::Size(126, 322);
 			this->flowLayoutPanel1->TabIndex = 0;
 			this->flowLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::flowLayoutPanel1_Paint);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(3, 3);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(123, 56);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"Sensor 1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// import_button
 			// 
@@ -150,15 +167,6 @@ namespace desktopapp {
 			// dataTable1
 			// 
 			this->dataTable1->TableName = L"Table1";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(3, 3);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(123, 56);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Sensor 1";
-			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// button2
 			// 
@@ -305,6 +313,9 @@ private: System::Void textBox1_TextChanged(System::Object^  sender, System::Even
 private: System::Void max_height_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	total_count_value->Text = "4"; //"" + sensor1->total_count();
 }
 };
 }

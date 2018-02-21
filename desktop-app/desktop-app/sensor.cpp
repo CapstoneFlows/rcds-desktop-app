@@ -6,6 +6,14 @@ sensor::sensor()
 {
 }
 
+sensor::sensor(int id, string location, record * data, int size)
+{
+	this->id = id;
+	this->location = location;
+	this->data = data;
+	this->size = size;
+}
+
 
 
 void sensor::filter_height(double min, double max)
@@ -23,4 +31,9 @@ void sensor::filter_height(double min, double max)
 	}
 	this->data = filtered;
 	*/
+}
+
+int sensor::total_count()
+{
+	return size;
 }
