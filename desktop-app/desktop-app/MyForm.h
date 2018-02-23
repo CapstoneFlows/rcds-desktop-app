@@ -64,7 +64,7 @@ namespace desktopapp {
 
 
 	private: System::Windows::Forms::Label^  average_speed_label;
-	private: System::Windows::Forms::Label^  average_speed_value;
+
 	private: System::Windows::Forms::TextBox^  min_height;
 	private: System::Windows::Forms::TextBox^  max_height;
 	private: System::Windows::Forms::Button^  filter_button;
@@ -93,10 +93,10 @@ namespace desktopapp {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Title^  title2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Title^  title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->sensor1 = (gcnew System::Windows::Forms::Button());
 			this->sensor2 = (gcnew System::Windows::Forms::Button());
@@ -107,7 +107,6 @@ namespace desktopapp {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->total_count = (gcnew System::Windows::Forms::Label());
 			this->average_speed_label = (gcnew System::Windows::Forms::Label());
-			this->average_speed_value = (gcnew System::Windows::Forms::Label());
 			this->min_height = (gcnew System::Windows::Forms::TextBox());
 			this->max_height = (gcnew System::Windows::Forms::TextBox());
 			this->filter_button = (gcnew System::Windows::Forms::Button());
@@ -168,23 +167,23 @@ namespace desktopapp {
 			// 
 			// speed_chart
 			// 
-			chartArea2->Name = L"ChartArea1";
-			this->speed_chart->ChartAreas->Add(chartArea2);
-			legend2->Name = L"Legend1";
-			this->speed_chart->Legends->Add(legend2);
+			chartArea1->Name = L"ChartArea1";
+			this->speed_chart->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->speed_chart->Legends->Add(legend1);
 			this->speed_chart->Location = System::Drawing::Point(182, 12);
 			this->speed_chart->Name = L"speed_chart";
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series2->Legend = L"Legend1";
-			series2->Name = L"Sensor";
-			this->speed_chart->Series->Add(series2);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series1->Legend = L"Legend1";
+			series1->Name = L"Sensor";
+			this->speed_chart->Series->Add(series1);
 			this->speed_chart->Size = System::Drawing::Size(300, 183);
 			this->speed_chart->TabIndex = 2;
 			this->speed_chart->Text = L"chart1";
-			title2->Name = L"Title1";
-			title2->Text = L"Speed vs. Time";
-			this->speed_chart->Titles->Add(title2);
+			title1->Name = L"Title1";
+			title1->Text = L"Speed vs. Time";
+			this->speed_chart->Titles->Add(title1);
 			this->speed_chart->Click += gcnew System::EventHandler(this, &MyForm::speed_chart_Click);
 			// 
 			// dataSet1
@@ -221,18 +220,9 @@ namespace desktopapp {
 			this->average_speed_label->AutoSize = true;
 			this->average_speed_label->Location = System::Drawing::Point(335, 244);
 			this->average_speed_label->Name = L"average_speed_label";
-			this->average_speed_label->Size = System::Drawing::Size(81, 13);
+			this->average_speed_label->Size = System::Drawing::Size(90, 13);
 			this->average_speed_label->TabIndex = 6;
-			this->average_speed_label->Text = L"Average Speed";
-			// 
-			// average_speed_value
-			// 
-			this->average_speed_value->AutoSize = true;
-			this->average_speed_value->Location = System::Drawing::Point(426, 244);
-			this->average_speed_value->Name = L"average_speed_value";
-			this->average_speed_value->Size = System::Drawing::Size(36, 13);
-			this->average_speed_value->TabIndex = 7;
-			this->average_speed_value->Text = L"0 mph";
+			this->average_speed_label->Text = L"Average Speed:  ";
 			// 
 			// min_height
 			// 
@@ -311,7 +301,6 @@ namespace desktopapp {
 			this->Controls->Add(this->filter_button);
 			this->Controls->Add(this->max_height);
 			this->Controls->Add(this->min_height);
-			this->Controls->Add(this->average_speed_value);
 			this->Controls->Add(this->average_speed_label);
 			this->Controls->Add(this->total_count);
 			this->Controls->Add(this->button2);

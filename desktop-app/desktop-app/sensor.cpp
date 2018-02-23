@@ -5,12 +5,15 @@ sensor::sensor()
 {
 }
 
-sensor::sensor(int id, string location, record * data, int size)
+sensor::sensor(int id, string location, record data[], int size)
 {
 	this->id = id;
 	this->location = location;
-	this->data = data;
 	this->size = size;
+
+	for (int i = 0; i < 4; i++) {
+		this->data[i] = data[i];
+	}
 }
 
 sensor::sensor(int id, string location, int size) {
@@ -39,4 +42,14 @@ void sensor::filter_height(double min, double max)
 int sensor::total_count()
 {
 	return size;
+}
+
+int sensor::average_speed() {
+	int result = 0;
+
+	for (int i = 0; i < this->size; i++) {
+		result += this->data[i].speed;
+	}
+	result = result / this->size;
+	return result;
 }

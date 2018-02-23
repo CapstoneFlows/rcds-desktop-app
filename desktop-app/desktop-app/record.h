@@ -13,7 +13,8 @@ using namespace std;
 		time_t end_time;
 		double height;
 		string vehicle_type; // Determined by calculating the height and speed
+		int speed;
 
 		record(); // Initialize with Data from SQL database
-		record(int id, string location, double height);
+		record(int id, string location, double height, int speed);
 	};
