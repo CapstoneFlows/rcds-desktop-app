@@ -1,5 +1,5 @@
 #include "sensor.h"
-
+using namespace desktopapp;
 
 
 sensor::sensor()

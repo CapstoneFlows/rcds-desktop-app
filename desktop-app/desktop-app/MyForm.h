@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+
+
 namespace desktopapp {
 
 	using namespace System;
@@ -16,8 +18,12 @@ namespace desktopapp {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+
 	public:
+
+
 		//sensor *sensor1;
+		void initialize_sensor();
 		MyForm(void)
 		{
 			InitializeComponent();

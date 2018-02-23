@@ -1,5 +1,7 @@
 ﻿  Main.cpp
-Main.cpp(13): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+Main.cpp(14): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   MyForm.cpp
   Generating Code...
-  desktop-app.vcxproj -> C:\Users\Jayden\Desktop\rcds-desktop-app\desktop-app\x64\Debug\desktop-app.exe
+MyForm.obj : error LNK2020: unresolved token (06000001) desktopapp.MyForm::initialize_sensor
+Main.obj : error LNK2020: unresolved token (06000001) desktopapp.MyForm::initialize_sensor
+C:\Users\Jayden\Desktop\rcds-desktop-app\desktop-app\x64\Debug\desktop-app.exe : fatal error LNK1120: 2 unresolved externals
