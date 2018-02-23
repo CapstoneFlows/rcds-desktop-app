@@ -7,6 +7,7 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+/*
 
 [STAThread]
 
@@ -17,3 +18,6 @@ void main(array<String^>^ args)
 	desktopapp::MyForm form;
 	Application::Run(%form);
 }
+*/
+
+

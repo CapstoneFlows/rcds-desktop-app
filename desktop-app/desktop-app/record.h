@@ -4,8 +4,7 @@
 #include <ctime>
 using namespace std;
 
-namespace desktopapp {
-	public class record
+ class record
 	{
 	public:
 		int id; // Unique record ID
@@ -18,5 +17,3 @@ namespace desktopapp {
 		record(); // Initialize with Data from SQL database
 		record(int id, string location, double height);
 	};
-
-}

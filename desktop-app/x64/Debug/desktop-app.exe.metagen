@@ -19,7 +19,3 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class desktopapp.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Struct record: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
-  :System.ValueType
-Struct sensor: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
-  :System.ValueType

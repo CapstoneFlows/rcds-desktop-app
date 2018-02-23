@@ -1,5 +1,4 @@
 #include "record.h"
-using namespace desktopapp;
 
 record::record()
 {

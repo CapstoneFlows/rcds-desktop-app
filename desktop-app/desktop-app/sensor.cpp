@@ -1,5 +1,4 @@
 #include "sensor.h"
-using namespace desktopapp;
 
 
 sensor::sensor()
@@ -14,7 +13,11 @@ sensor::sensor(int id, string location, record * data, int size)
 	this->size = size;
 }
 
-
+sensor::sensor(int id, string location, int size) {
+	this->id = id;
+	this->location = location;
+	this->size = size;
+}
 
 void sensor::filter_height(double min, double max)
 {

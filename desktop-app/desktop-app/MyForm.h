@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <string>
 
 
@@ -23,7 +22,7 @@ namespace desktopapp {
 
 
 		//sensor *sensor1;
-		void initialize_sensor();
+		//void initialize_sensor();
 		MyForm(void)
 		{
 			InitializeComponent();
@@ -57,10 +56,13 @@ namespace desktopapp {
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^  speed_chart;
 	private: System::Data::DataSet^  dataSet1;
 	private: System::Data::DataTable^  dataTable1;
-	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  sensor1;
+
+
 	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Label^  total_count_label;
-	private: System::Windows::Forms::Label^  total_count_value;
+	private: System::Windows::Forms::Label^  total_count;
+
+
 	private: System::Windows::Forms::Label^  average_speed_label;
 	private: System::Windows::Forms::Label^  average_speed_value;
 	private: System::Windows::Forms::TextBox^  min_height;
@@ -68,6 +70,11 @@ namespace desktopapp {
 	private: System::Windows::Forms::Button^  filter_button;
 	private: System::Windows::Forms::Label^  filter_label;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  location_label;
+
+	private: System::Windows::Forms::Label^  id_label;
+	private: System::Windows::Forms::Button^  sensor2;
+
 
 
 	protected:
@@ -86,19 +93,19 @@ namespace desktopapp {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Title^  title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Title^  title2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->sensor1 = (gcnew System::Windows::Forms::Button());
+			this->sensor2 = (gcnew System::Windows::Forms::Button());
 			this->import_button = (gcnew System::Windows::Forms::Button());
 			this->speed_chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->dataSet1 = (gcnew System::Data::DataSet());
 			this->dataTable1 = (gcnew System::Data::DataTable());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->total_count_label = (gcnew System::Windows::Forms::Label());
-			this->total_count_value = (gcnew System::Windows::Forms::Label());
+			this->total_count = (gcnew System::Windows::Forms::Label());
 			this->average_speed_label = (gcnew System::Windows::Forms::Label());
 			this->average_speed_value = (gcnew System::Windows::Forms::Label());
 			this->min_height = (gcnew System::Windows::Forms::TextBox());
@@ -106,6 +113,8 @@ namespace desktopapp {
 			this->filter_button = (gcnew System::Windows::Forms::Button());
 			this->filter_label = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->location_label = (gcnew System::Windows::Forms::Label());
+			this->id_label = (gcnew System::Windows::Forms::Label());
 			this->flowLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->speed_chart))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataSet1))->BeginInit();
@@ -114,7 +123,8 @@ namespace desktopapp {
 			// 
 			// flowLayoutPanel1
 			// 
-			this->flowLayoutPanel1->Controls->Add(this->button1);
+			this->flowLayoutPanel1->Controls->Add(this->sensor1);
+			this->flowLayoutPanel1->Controls->Add(this->sensor2);
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(12, 12);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
@@ -122,15 +132,27 @@ namespace desktopapp {
 			this->flowLayoutPanel1->TabIndex = 0;
 			this->flowLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::flowLayoutPanel1_Paint);
 			// 
-			// button1
+			// sensor1
 			// 
-			this->button1->Location = System::Drawing::Point(3, 3);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(123, 56);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Sensor 1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->sensor1->Location = System::Drawing::Point(3, 3);
+			this->sensor1->Name = L"sensor1";
+			this->sensor1->Size = System::Drawing::Size(123, 56);
+			this->sensor1->TabIndex = 0;
+			this->sensor1->Text = L"Sensor 1";
+			this->sensor1->UseVisualStyleBackColor = true;
+			this->sensor1->Visible = false;
+			this->sensor1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// sensor2
+			// 
+			this->sensor2->Location = System::Drawing::Point(3, 65);
+			this->sensor2->Name = L"sensor2";
+			this->sensor2->Size = System::Drawing::Size(123, 56);
+			this->sensor2->TabIndex = 1;
+			this->sensor2->Text = L"Sensor 2";
+			this->sensor2->UseVisualStyleBackColor = true;
+			this->sensor2->Visible = false;
+			this->sensor2->Click += gcnew System::EventHandler(this, &MyForm::sensor2_Click);
 			// 
 			// import_button
 			// 
@@ -146,23 +168,23 @@ namespace desktopapp {
 			// 
 			// speed_chart
 			// 
-			chartArea1->Name = L"ChartArea1";
-			this->speed_chart->ChartAreas->Add(chartArea1);
-			legend1->Name = L"Legend1";
-			this->speed_chart->Legends->Add(legend1);
+			chartArea2->Name = L"ChartArea1";
+			this->speed_chart->ChartAreas->Add(chartArea2);
+			legend2->Name = L"Legend1";
+			this->speed_chart->Legends->Add(legend2);
 			this->speed_chart->Location = System::Drawing::Point(182, 12);
 			this->speed_chart->Name = L"speed_chart";
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series1->Legend = L"Legend1";
-			series1->Name = L"Sensor";
-			this->speed_chart->Series->Add(series1);
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series2->Legend = L"Legend1";
+			series2->Name = L"Sensor";
+			this->speed_chart->Series->Add(series2);
 			this->speed_chart->Size = System::Drawing::Size(300, 183);
 			this->speed_chart->TabIndex = 2;
 			this->speed_chart->Text = L"chart1";
-			title1->Name = L"Title1";
-			title1->Text = L"Speed vs. Time";
-			this->speed_chart->Titles->Add(title1);
+			title2->Name = L"Title1";
+			title2->Text = L"Speed vs. Time";
+			this->speed_chart->Titles->Add(title2);
 			this->speed_chart->Click += gcnew System::EventHandler(this, &MyForm::speed_chart_Click);
 			// 
 			// dataSet1
@@ -184,30 +206,20 @@ namespace desktopapp {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
-			// total_count_label
+			// total_count
 			// 
-			this->total_count_label->AutoSize = true;
-			this->total_count_label->Location = System::Drawing::Point(182, 221);
-			this->total_count_label->Name = L"total_count_label";
-			this->total_count_label->Size = System::Drawing::Size(68, 13);
-			this->total_count_label->TabIndex = 4;
-			this->total_count_label->Text = L"Total Count: ";
-			this->total_count_label->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
-			// 
-			// total_count_value
-			// 
-			this->total_count_value->AutoSize = true;
-			this->total_count_value->Location = System::Drawing::Point(257, 221);
-			this->total_count_value->Name = L"total_count_value";
-			this->total_count_value->Size = System::Drawing::Size(13, 13);
-			this->total_count_value->TabIndex = 5;
-			this->total_count_value->Text = L"0";
-			this->total_count_value->Click += gcnew System::EventHandler(this, &MyForm::label1_Click_1);
+			this->total_count->AutoSize = true;
+			this->total_count->Location = System::Drawing::Point(335, 214);
+			this->total_count->Name = L"total_count";
+			this->total_count->Size = System::Drawing::Size(80, 13);
+			this->total_count->TabIndex = 4;
+			this->total_count->Text = L"Total Count:   0";
+			this->total_count->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
 			// 
 			// average_speed_label
 			// 
 			this->average_speed_label->AutoSize = true;
-			this->average_speed_label->Location = System::Drawing::Point(182, 251);
+			this->average_speed_label->Location = System::Drawing::Point(335, 244);
 			this->average_speed_label->Name = L"average_speed_label";
 			this->average_speed_label->Size = System::Drawing::Size(81, 13);
 			this->average_speed_label->TabIndex = 6;
@@ -216,7 +228,7 @@ namespace desktopapp {
 			// average_speed_value
 			// 
 			this->average_speed_value->AutoSize = true;
-			this->average_speed_value->Location = System::Drawing::Point(273, 251);
+			this->average_speed_value->Location = System::Drawing::Point(426, 244);
 			this->average_speed_value->Name = L"average_speed_value";
 			this->average_speed_value->Size = System::Drawing::Size(36, 13);
 			this->average_speed_value->TabIndex = 7;
@@ -268,11 +280,32 @@ namespace desktopapp {
 			this->label1->TabIndex = 12;
 			this->label1->Text = L"Max Height";
 			// 
+			// location_label
+			// 
+			this->location_label->AutoSize = true;
+			this->location_label->Location = System::Drawing::Point(185, 243);
+			this->location_label->Name = L"location_label";
+			this->location_label->Size = System::Drawing::Size(57, 13);
+			this->location_label->TabIndex = 13;
+			this->location_label->Text = L"Location:  ";
+			// 
+			// id_label
+			// 
+			this->id_label->AutoSize = true;
+			this->id_label->Location = System::Drawing::Point(188, 214);
+			this->id_label->Name = L"id_label";
+			this->id_label->Size = System::Drawing::Size(33, 13);
+			this->id_label->TabIndex = 14;
+			this->id_label->Text = L"ID:  0";
+			this->id_label->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(526, 395);
+			this->Controls->Add(this->id_label);
+			this->Controls->Add(this->location_label);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->filter_label);
 			this->Controls->Add(this->filter_button);
@@ -280,8 +313,7 @@ namespace desktopapp {
 			this->Controls->Add(this->min_height);
 			this->Controls->Add(this->average_speed_value);
 			this->Controls->Add(this->average_speed_label);
-			this->Controls->Add(this->total_count_value);
-			this->Controls->Add(this->total_count_label);
+			this->Controls->Add(this->total_count);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->speed_chart);
 			this->Controls->Add(this->import_button);
@@ -302,8 +334,7 @@ namespace desktopapp {
 	}
 	private: System::Void menuStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 	}
-	private: System::Void import_button_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
+	private: System::Void import_button_Click(System::Object^  sender, System::EventArgs^  e);
 	private: System::Void speed_chart_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -320,9 +351,10 @@ private: System::Void max_height_TextChanged(System::Object^  sender, System::Ev
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	total_count_value->Text = "4"; //"" + sensor1->total_count();
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
+private: System::Void sensor2_Click(System::Object^  sender, System::EventArgs^  e);
 };
 }
 

@@ -7,8 +7,8 @@
 #include <array>
 
 using namespace std;
-namespace desktopapp {
-	public class sensor
+
+ class sensor
 	{
 
 	public:
@@ -18,8 +18,8 @@ namespace desktopapp {
 		int size;
 		sensor(); //Initialize with Data from SQL Database
 		sensor(int id, string location, record *data, int size);
-
+		sensor(int id, string location, int size);
+		int get_id() { return this->id; }
 		void filter_height(double low, double max); // Filter the Data with given low & max height; 
 		int total_count();
 	};
-}
