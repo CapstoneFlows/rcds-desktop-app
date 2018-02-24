@@ -7,7 +7,6 @@ class database
 {
 	
 public:
-	int sensor_size = 0;
 	sensor los[10];
 	database();
 	void initialize();

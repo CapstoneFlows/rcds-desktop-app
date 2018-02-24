@@ -11,7 +11,7 @@ sensor::sensor(int id, string location, record data[], int size)
 	this->location = location;
 	this->size = size;
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < size; i++) {
 		this->data[i] = data[i];
 	}
 }
@@ -24,19 +24,22 @@ sensor::sensor(int id, string location, int size) {
 
 void sensor::filter_height(double min, double max)
 {
-	/*
-	for (int i = 0; i < this->data.size();i++)
+	record filtered[100];
+	int j = 0;
+	for (int i = 0; i < this->size;i++)
 	{
-		record filtered[this->data.size()];
-		int j = 0;
 		if ((this->data[i].height > min) && (this->data[i].height < max))
 		{
 			filtered[j] = this->data[i];
 			j++;
 		}
 	}
-	this->data = filtered;
-	*/
+
+	for (int i = 0; i < j; i++) {
+		this->data[i] = filtered[j]
+	}
+	this->size = j;
+	
 }
 
 int sensor::total_count()

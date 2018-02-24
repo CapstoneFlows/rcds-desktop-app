@@ -1,2 +1,4 @@
-﻿  record.cpp
-  desktop-app.vcxproj -> C:\Users\Jayden\Desktop\rcds-desktop-app\desktop-app\x64\Debug\desktop-app.exe
+﻿  MyForm.cpp
+  sensor.cpp
+sensor.cpp(40): error C2143: syntax error: missing ';' before '}'
+  Generating Code...

@@ -169,12 +169,13 @@ namespace desktopapp {
 			// 
 			chartArea1->Name = L"ChartArea1";
 			this->speed_chart->ChartAreas->Add(chartArea1);
+			this->speed_chart->DataSource = this->dataSet1;
 			legend1->Name = L"Legend1";
 			this->speed_chart->Legends->Add(legend1);
 			this->speed_chart->Location = System::Drawing::Point(182, 12);
 			this->speed_chart->Name = L"speed_chart";
 			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
 			series1->Legend = L"Legend1";
 			series1->Name = L"Sensor";
 			this->speed_chart->Series->Add(series1);
@@ -188,7 +189,7 @@ namespace desktopapp {
 			// 
 			// dataSet1
 			// 
-			this->dataSet1->DataSetName = L"NewDataSet";
+			this->dataSet1->DataSetName = L"speed_dataset";
 			this->dataSet1->Tables->AddRange(gcnew cli::array< System::Data::DataTable^  >(1) { this->dataTable1 });
 			// 
 			// dataTable1
@@ -338,14 +339,15 @@ private: System::Void textBox1_TextChanged(System::Object^  sender, System::Even
 }
 private: System::Void max_height_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void sensor2_Click(System::Object^  sender, System::EventArgs^  e);
+private: System::Void load_sensor();
 };
 }
+
 
 
 /*
