@@ -26,7 +26,7 @@ void sensor::filter_height(double min, double max)
 {
 	record filtered[100];
 	int j = 0;
-	for (int i = 0; i < this->size;i++)
+	for (int i = 0; i < this->size; i++)
 	{
 		if ((this->data[i].height > min) && (this->data[i].height < max))
 		{
@@ -36,9 +36,10 @@ void sensor::filter_height(double min, double max)
 	}
 
 	for (int i = 0; i < j; i++) {
-		this->data[i] = filtered[j]
+		this->data[i] = filtered[j];
 	}
 	this->size = j;
+
 	
 }
 

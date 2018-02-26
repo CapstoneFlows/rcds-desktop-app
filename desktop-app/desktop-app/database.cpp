@@ -1,5 +1,6 @@
 #include "database.h"
-
+#include <fstream>
+#include "record.h"
 
 void database::initialize() {
 }
@@ -31,6 +32,53 @@ void database::import_data() {
 	record record8 = record(8, "Marino Center", 5.0, 3);
 	record records2[] = { record5, record6, record7, record8 };
 
-	sensor sensor2 = sensor(2, "Marino Center", records2, 4);
-	this->los[1] = sensor2;
+	//sensor sensor2 = sensor(2, "Marino Center", records2, 4);
+	//this->los[1] = sensor2;
+
+	string line;
+	ifstream myfile("example.txt");
+	record readRecords[100];
+	int j = 0;
+	int k;
+
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
+		{
+			record r = record();
+			int i = 0;
+			string delimiter = "|";
+			size_t pos = 0;
+			string token;
+			while ((pos = line.find(delimiter)) != string::npos) {
+				token = line.substr(0, pos);
+				line.erase(0, pos + delimiter.length());
+
+				switch (i) {
+				case 0:
+					k = stoi(token);
+					break;
+				case 1:
+					r.id = stoi(token);
+					break;
+				case 2:
+					r.location = token;
+					break;
+				case 3:
+					r.height = stod(token);
+					break;
+				case 4:
+					r.speed = stoi(token);
+					break;
+				}
+				i++;
+			}
+			readRecords[j] = r;
+			j++;
+		}
+		myfile.close();
+	}
+	sensor readSensor = sensor(k, readRecords[0].location, readRecords, j);
+	this->los[k - 1] = readSensor;
+
 }
