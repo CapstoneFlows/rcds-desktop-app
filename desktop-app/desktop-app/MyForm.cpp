@@ -36,7 +36,7 @@ System::Void MyForm::button3_Click(System::Object^  sender, System::EventArgs^  
 	String ^ max = max_height->Text;
 
 
-	db.los[index].filter_height(atof(min.c_str()), atof(max.c_str()));
+	//db.los[index].filter_height(atof(min.c_str()), atof(max.c_str()));
 	load_sensor();
 }
 

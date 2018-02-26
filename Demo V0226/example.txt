@@ -1,0 +1,10 @@
+2|1|Marino Center|10.0|10|
+2|2|Marino Center|9.0|5|
+2|3|Marino Center|13.0|7|
+2|4|Marino Center|12.0|20|
+2|5|Marino Center|7.0|30|
+2|6|Marino Center|5.0|25|
+2|7|Marino Center|8.0|10|
+2|8|Marino Center|9.0|6|
+2|9|Marino Center|7.0|0|
+2|10|Marino Center|7.0|6|
