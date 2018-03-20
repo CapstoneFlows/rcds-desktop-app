@@ -14,7 +14,7 @@ void database::add_sensor(sensor s) {
 	//los[sensor_size] = s;
 }
 
-void database::import_data() {
+void database::import_data(string file_name) {
 	//file open
 
 	record record1 = record(1, "Ruggles Station", 4.0, 10);
@@ -36,7 +36,7 @@ void database::import_data() {
 	//this->los[1] = sensor2;
 
 	string line;
-	ifstream myfile("example.txt");
+	ifstream myfile(file_name);
 	record readRecords[100];
 	int j = 0;
 	int k;
